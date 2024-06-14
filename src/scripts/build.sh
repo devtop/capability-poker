@@ -19,3 +19,6 @@ cd "$ROOTPATH"
 
 # Build Cards
 "$SCRIPT_PATH/cards.sh"
+
+# Build Cards
+"$SCRIPT_PATH/cards_printsheets.sh"
