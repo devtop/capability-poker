@@ -23,7 +23,7 @@ for LANGUAGE in "de" ; do
   CATEGORY="${CATEGORY^^}"
 
   magick "$SRCPATH/cards/back.png" \
-  -pointsize 100 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 220,300 '$CATEGORY'" \
+  -pointsize 160 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 190,300 '$CATEGORY'" \
   "$BUILDPATH/$LANGUAGE/images/cards/back.png"
 
   TITLE="$(cat "$SRCPATH/cards/title.$LANGUAGE.md")"
@@ -39,7 +39,8 @@ for LANGUAGE in "de" ; do
     magick "$SRCPATH/cards/front.png" \
     -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
     -pointsize 40 -font "ext/static/OpenSans-Regular.ttf" -draw "text 1020,100 '$cardnumber'" \
-    +pointsize -fill black -size 930x220 label:"$TEXT" -geometry +120+220\
+    +pointsize -gravity west -fill black -size 930x440 label:"$TEXT" -geometry +120+55\
     -composite "$BUILDPATH/$LANGUAGE/images/cards/$cardnumber.png"
+    echo -n .
   done
 done
