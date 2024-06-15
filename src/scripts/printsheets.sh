@@ -25,5 +25,5 @@ for LANGUAGE in "de" ; do
   echo -n .
 
   magick -quality 50 -density 77 "$BUILDPATH/$LANGUAGE/print/images/"*.jpg -page A4 "$BUILDPATH/$LANGUAGE/print/pdf/cards_compact.pdf"
-  echo -n .
+  echo .
 done

@@ -52,5 +52,5 @@ for LANGUAGE in "de" ; do
     done
     rm "$BUILDPATH/$LANGUAGE/print/images/cards_back.jpg"
   fi
-  echo -n .
+  echo .
 done

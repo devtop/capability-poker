@@ -21,11 +21,15 @@ for LANGUAGE in "de" ; do
   rm "$BUILDPATH/print_diy.$LANGUAGE.zip"
   zip -j "$BUILDPATH/print_diy.$LANGUAGE.zip" \
     "$BUILDPATH/$LANGUAGE/print/pdf/cards.pdf"
+  echo -n .
+
   rm "$BUILDPATH/print_mail.$LANGUAGE.zip"
   zip -j "$BUILDPATH/print_mail.$LANGUAGE.zip" \
     "$BUILDPATH/$LANGUAGE/print/pdf/cards_compact.pdf" 
+  echo -n .
 
   rm "$BUILDPATH/all.$LANGUAGE.zip"
   zip "$BUILDPATH/all.$LANGUAGE.zip" \
     "build/$LANGUAGE"
+  echo .
 done

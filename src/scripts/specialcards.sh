@@ -67,7 +67,7 @@ for LANGUAGE in "de" ; do
   -gravity Northeast -font "ext/static/OpenSans-Semibold.ttf" -size 450x \
   caption:"$PERSONS" -geometry +600+220 -composite \
   "$BUILDPATH/$LANGUAGE/images/cards/s08.png"
-  echo -n .
+  echo .
 
 
 done

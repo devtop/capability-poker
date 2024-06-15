@@ -76,4 +76,5 @@ for LANGUAGE in "de" ; do
     "$BUILDPATH/$LANGUAGE/images/cards/i$i.png"
     echo -n .
   done
+  echo " "
 done
