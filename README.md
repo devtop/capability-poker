@@ -6,7 +6,7 @@ Stärkenpoker ist eine kartenbasierte Methode, um Teams ins Gespräch miteinande
 
 Das Repository enthält alle Texte und Scripte, um die Kartenbilder und Druckseiten zu erstellen. 
 
-## Packeges
+## Packages
 
 tbd
 
@@ -16,6 +16,12 @@ tbd
 - ImageMagick
 - OpenSans Font
 - Zip
+
+## Credits
+
+Tobias Ranft - Umsetzung, Texte, Programmierung
+
+BERATUNG JUDITH ANDRESEN - Herausgeberin, Design
 
 ## Licence
 

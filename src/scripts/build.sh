@@ -20,8 +20,11 @@ cd "$ROOTPATH"
 # Build Cards
 "$SCRIPT_PATH/cards.sh"
 
-# Build Cards
+# Build Specialcards
+"$SCRIPT_PATH/specialcards.sh"
+
+# Build images of print sheet 
 "$SCRIPT_PATH/cards_printsheets.sh"
 
-# Build Cards
+# Build pdf print sheets
 "$SCRIPT_PATH/printsheets.sh"
