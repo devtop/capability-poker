@@ -28,3 +28,6 @@ cd "$ROOTPATH"
 
 # Build pdf print sheets
 "$SCRIPT_PATH/printsheets.sh"
+
+# Build packages
+"$SCRIPT_PATH/packages.sh"
