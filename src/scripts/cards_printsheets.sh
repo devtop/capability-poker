@@ -43,7 +43,7 @@ for LANGUAGE in "de" ; do
   -tile 2x4 -geometry +2+2 "$BUILDPATH/$LANGUAGE/print/images/cards_back.jpg"
   echo -n .
 
-  FILES=$(ls "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png | wc -l)
+  FILES=$(ls "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png "$BUILDPATH/$LANGUAGE/images/cards/s"[0-9][0-9].png | wc -l)
   (( SHEETS = (FILES+7)/8 ))
   if [ $SHEETS -gt 1 ]; then
     for (( i=0; i<$SHEETS; i++ ))
