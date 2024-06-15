@@ -14,14 +14,16 @@ BUILDPATH="$ROOTPATH/build"
 
 cd "$ROOTPATH"
 
-# Merge text
-"$SCRIPT_PATH/mergeText.sh"
+for LANGUAGE in "de" ; do
 
-# Build Cards
-"$SCRIPT_PATH/cards.sh"
+  echo "Starting $LANGUAGE printsheet pdf"
 
-# Build Cards
-"$SCRIPT_PATH/cards_printsheets.sh"
+  mkdir -p "$BUILDPATH/$LANGUAGE/print/pdf"
+  echo -n .
+  
+  magick -quality 94 -density 300 "$BUILDPATH/$LANGUAGE/print/images/"*.jpg -page A4 "$BUILDPATH/$LANGUAGE/print/pdf/cards.pdf"
+  echo -n .
 
-# Build Cards
-"$SCRIPT_PATH/printsheets.sh"
+  magick -quality 50 -density 77 "$BUILDPATH/$LANGUAGE/print/images/"*.jpg -page A4 "$BUILDPATH/$LANGUAGE/print/pdf/cards_compact.pdf"
+  echo -n .
+done
