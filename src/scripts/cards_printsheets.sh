@@ -21,8 +21,12 @@ for LANGUAGE in "de" ; do
   mkdir -p "$BUILDPATH/$LANGUAGE/print/images/"
   echo -n .
   
+  rm "$BUILDPATH/$LANGUAGE/"print/images/cards*.jpg
+  echo -n .
+
   magick montage -page A4 -density 300 -gravity north-west \
    "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png \
+   "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png \
   -tile 2x4 -geometry +2+2 "$BUILDPATH/$LANGUAGE/print/images/cards.jpg"
   echo -n . 
   

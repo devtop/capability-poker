@@ -29,6 +29,8 @@ for LANGUAGE in "de" ; do
   TITLE="$(cat "$SRCPATH/cards/title.$LANGUAGE.md")"
   TITLE="${TITLE^^}"
 
+  cardcount=0
+
   for file in src/cards/[0-9][0-9].$LANGUAGE.md; do
     filename=$(basename -- "$file")
     extension="${filename##*.}"
@@ -52,6 +54,26 @@ for LANGUAGE in "de" ; do
       +pointsize -gravity west -fill black -size 930x440 label:"$TEXT" -geometry +120+55\
       -composite "$BUILDPATH/$LANGUAGE/images/cards/$cardnumber.png"
     fi
+    let cardcount++
+    echo -n .
+  done
+
+  rm "$BUILDPATH/$LANGUAGE/"images/cards/i[0-9].png
+  echo -n .
+
+  INDIVIDUELL="$(cat "$SRCPATH/cards/individual.$LANGUAGE.md")"
+  ADDITIONALCARDS=$(($cardcount % 8))
+  ADDITIONALCARDS=$((8 - $ADDITIONALCARDS))
+
+  if [ "$ADDITIONALCARDS" -eq 0 ]; then
+    ADDITIONALCARDS=8
+  fi
+  
+  for i in $(seq 1 $ADDITIONALCARDS); do
+    magick "$SRCPATH/cards/front.png" \
+    -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
+    -pointsize 40 -gravity northeast -font "ext/static/OpenSans-Regular.ttf" -draw "text 90,50 '$INDIVIDUELL'" \
+    "$BUILDPATH/$LANGUAGE/images/cards/i$i.png"
     echo -n .
   done
 done
