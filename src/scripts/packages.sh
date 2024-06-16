@@ -34,7 +34,7 @@ for LANGUAGE in "de" ; do
 
   cp "$ROOTPATH/LICENSE" "build/$LANGUAGE"
   rm "$BUILDPATH/all.$LANGUAGE.zip"
-  zip "$BUILDPATH/all.$LANGUAGE.zip" \
+  zip -r "$BUILDPATH/all.$LANGUAGE.zip" \
     "build/$LANGUAGE"
   echo .
 done

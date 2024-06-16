@@ -8,7 +8,15 @@ Das Repository enthält alle Texte und Scripte, um die Kartenbilder und Drucksei
 
 ## Packages
 
-tbd
+[Releases](https://github.com/devtop/capability-poker/releases)
+
+### Pre-release [v2406-pre1](https://github.com/devtop/capability-poker/releases/tag/v2406-pre1)
+
+[print_diy.de.zip](https://github.com/devtop/capability-poker/releases/download/v2406-pre1/print_diy.de.zip) enthält alle Dateien, die Du fürs ausdrucken und ausschneiden benötigst.
+
+[print_mail.de.zip](https://github.com/devtop/capability-poker/releases/download/v2406-pre1/print_mail.de.zip) enthält sind die gleichen Dateien, wie print_diy.de.zip, in reduziertet Qualität und erhöhter Kompression. Diese Datei ist zum Beispiel für den Emailversand geeignet.
+
+[all.de.zip](https://github.com/devtop/capability-poker/releases/download/v2406-pre1/all.de.zip) enthält alle gebauten Dateien. Sinnvoll, wenn Du die Karten professionell drucken lassen möchtest.
 
 ## Requirements
 
