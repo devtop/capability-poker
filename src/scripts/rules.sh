@@ -14,23 +14,12 @@ BUILDPATH="$ROOTPATH/build"
 
 cd "$ROOTPATH"
 
-# Merge text
-"$SCRIPT_PATH/mergeText.sh"
+for LANGUAGE in "de" ; do
 
-# Build cards
-"$SCRIPT_PATH/cards.sh"
-
-# Build specialcards
-"$SCRIPT_PATH/specialcards.sh"
-
-# Build images of print sheet 
-"$SCRIPT_PATH/cards_printsheets.sh"
-
-# Build pdf print sheets
-"$SCRIPT_PATH/printsheets.sh"
-
-# Build rules
-"$SCRIPT_PATH/rules.sh"
-
-# Build packages
-"$SCRIPT_PATH/packages.sh"
+  echo "Starting $LANGUAGE rules"
+  
+  cd "$SRCPATH/rules/"
+#  pandoc -s -f gfm -t pdf -o "$BUILDPATH/$LANGUAGE/rules.pdf" "rules.$LANGUAGE.md"
+  mdpdf "rules.$LANGUAGE.md" "$BUILDPATH/$LANGUAGE/rules.pdf"
+  echo .
+done

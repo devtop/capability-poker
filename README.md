@@ -16,6 +16,7 @@ tbd
 - ImageMagick
 - OpenSans Font
 - Zip
+- [mdpdf](https://github.com/BlueHatbRit/mdpdf)
 
 ## Credits
 
@@ -23,6 +24,6 @@ Tobias Ranft - Umsetzung, Texte, Programmierung
 
 BERATUNG JUDITH ANDRESEN - Herausgeberin, Design
 
-## Licence
+## License
 
 Das Spiel ist frei verfügbar und steht unter [CC-BY-SA-4.0 Lizenz](https://creativecommons.org/licenses/by-sa/4.0/deed.de). Die Entwicklung wird [Github](https://github.com/devtop/capability-poker) koordiniert und veröffentlicht. Du bist eingeladen, dich dort zu beteiligen.
