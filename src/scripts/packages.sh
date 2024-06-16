@@ -20,14 +20,17 @@ for LANGUAGE in "de" ; do
 
   rm "$BUILDPATH/print_diy.$LANGUAGE.zip"
   zip -j "$BUILDPATH/print_diy.$LANGUAGE.zip" \
-    "$BUILDPATH/$LANGUAGE/print/pdf/cards.pdf"
+    "$BUILDPATH/$LANGUAGE/print/pdf/cards.pdf" \
+    "$ROOTPATH/LICENSE"
   echo -n .
 
   rm "$BUILDPATH/print_mail.$LANGUAGE.zip"
   zip -j "$BUILDPATH/print_mail.$LANGUAGE.zip" \
-    "$BUILDPATH/$LANGUAGE/print/pdf/cards_compact.pdf" 
+    "$BUILDPATH/$LANGUAGE/print/pdf/cards_compact.pdf" \
+    "$ROOTPATH/LICENSE" 
   echo -n .
 
+  cp "$ROOTPATH/LICENSE" "build/$LANGUAGE"
   rm "$BUILDPATH/all.$LANGUAGE.zip"
   zip "$BUILDPATH/all.$LANGUAGE.zip" \
     "build/$LANGUAGE"
