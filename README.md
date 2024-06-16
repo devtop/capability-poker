@@ -1,6 +1,6 @@
 # Stärkenpoker
 
-Stärkenpoker ist eine kartenbasierte Methode, um Teams ins Gespräch miteinander zu bringen. 
+Stärkenpoker ist eine kartenbasierte Methode, um Teams ins Gespräch miteinander zu bringen. Die [Regeln](src/rules/rules.de.md) sind einfach zu erlernen. 
 
 ## Build
 
@@ -25,4 +25,4 @@ BERATUNG JUDITH ANDRESEN - Herausgeberin, Design
 
 ## Licence
 
-tbd
+Das Spiel ist frei verfügbar und steht unter [CC-BY-SA-4.0 Lizenz](https://creativecommons.org/licenses/by-sa/4.0/deed.de). Die Entwicklung wird [Github](https://github.com/devtop/capability-poker) koordiniert und veröffentlicht. Du bist eingeladen, dich dort zu beteiligen.
