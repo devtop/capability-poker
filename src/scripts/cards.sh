@@ -44,13 +44,13 @@ for LANGUAGE in "de" ; do
     if [ "$SIZE" -gt "164" ] ; then
       magick "$SRCPATH/cards/front.png" \
       -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
-      -pointsize 40 -font "ext/static/OpenSans-Regular.ttf" -draw "text 1020,100 '$cardnumber'" \
+      -pointsize 30 -font "ext/static/OpenSans-Regular.ttf" -draw "text 1040,190 '$cardnumber'" \
       -pointsize 164 -gravity west -fill black -size 930x440 label:"$TEXT" -geometry +120+55\
       -composite "$BUILDPATH/$LANGUAGE/images/cards/$cardnumber.png"
     else
       magick "$SRCPATH/cards/front.png" \
       -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
-      -pointsize 40 -font "ext/static/OpenSans-Regular.ttf" -draw "text 1020,100 '$cardnumber'" \
+      -pointsize 30 -font "ext/static/OpenSans-Regular.ttf" -draw "text 1040,190 '$cardnumber'" \
       +pointsize -gravity west -fill black -size 930x440 label:"$TEXT" -geometry +120+55\
       -composite "$BUILDPATH/$LANGUAGE/images/cards/$cardnumber.png"
     fi
@@ -72,7 +72,7 @@ for LANGUAGE in "de" ; do
   for i in $(seq 1 $ADDITIONALCARDS); do
     magick "$SRCPATH/cards/front.png" \
     -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
-    -pointsize 40 -gravity northeast -font "ext/static/OpenSans-Regular.ttf" -draw "text 90,50 '$INDIVIDUELL'" \
+    -pointsize 20 -gravity northeast -font "ext/static/OpenSans-Regular.ttf" -draw "text 230,170 '$INDIVIDUELL'" \
     "$BUILDPATH/$LANGUAGE/images/cards/i$i.png"
     echo -n .
   done
