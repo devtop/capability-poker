@@ -29,6 +29,9 @@ cd "$ROOTPATH"
 # Build pdf print sheets
 "$SCRIPT_PATH/printsheets.sh"
 
+# Build print card pdfs
+"$SCRIPT_PATH/printcards.sh"
+
 # Build rules
 "$SCRIPT_PATH/rules.sh"
 
