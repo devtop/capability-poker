@@ -42,14 +42,29 @@ for LANGUAGE in "de" ; do
   "$BUILDPATH/$LANGUAGE/images/cards/back.png" \
   -tile 2x4 -geometry +2+2 "$BUILDPATH/$LANGUAGE/print/images/cards_back.jpg"
   echo -n .
+  
+  magick montage -page A4 -density 300 -gravity north-west \
+  "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
+  "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
+  "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
+  "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
+  "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
+  "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
+  "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
+  "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
+  -tile 2x4 -geometry +2+2 "$BUILDPATH/$LANGUAGE/print/images/cards_backs.jpg"
+  echo -n .
 
   FILES=$(ls "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png "$BUILDPATH/$LANGUAGE/images/cards/s"[0-9][0-9].png | wc -l)
   (( SHEETS = (FILES+7)/8 ))
   if [ $SHEETS -gt 1 ]; then
+    SHEETS=$(( $SHEETS - 1 ))
     for (( i=0; i<$SHEETS; i++ ))
     do
       cp "$BUILDPATH/$LANGUAGE/print/images/cards_back.jpg" "$BUILDPATH/$LANGUAGE/print/images/cards-$i""b.jpg"
     done
+    cp "$BUILDPATH/$LANGUAGE/print/images/cards_backs.jpg" "$BUILDPATH/$LANGUAGE/print/images/cards-$SHEETS""b.jpg"
+
     rm "$BUILDPATH/$LANGUAGE/print/images/cards_back.jpg"
   fi
   echo .

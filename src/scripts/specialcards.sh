@@ -20,6 +20,15 @@ for LANGUAGE in "de" ; do
   mkdir -p "$BUILDPATH/$LANGUAGE/images/cards/"
   echo -n .
 
+  CATEGORY="$(cat "$SRCPATH/cards/back.$LANGUAGE.md")"
+  CATEGORY="${CATEGORY^^}"
+
+  magick "$SRCPATH/cards/backs.png" \
+  -pointsize 160 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 190,300 '$CATEGORY'" \
+  "$BUILDPATH/$LANGUAGE/images/cards/backs.png"
+  echo -n .
+
+
 
   rm "$BUILDPATH/$LANGUAGE/"images/cards/s[0-9][0-9].png
   echo -n .

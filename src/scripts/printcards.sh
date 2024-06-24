@@ -34,14 +34,19 @@ for LANGUAGE in "de" ; do
   echo -n .
 
   rm "$BUILDPATH/$LANGUAGE/images/cards/back"[0-9][0-9].png
-  for (( i=0; i<55; i++ ))
+  for (( i=0; i<$CARDS; i++ ))
   do
-    cp "$BUILDPATH/$LANGUAGE/images/cards/back.png" "$BUILDPATH/$LANGUAGE/images/cards/back"$(printf "%02d" $i)".png"
+      cp "$BUILDPATH/$LANGUAGE/images/cards/back.png" "$BUILDPATH/$LANGUAGE/images/cards/back"$(printf "%02d" $i)".png"
+  done
+
+  for (( i=$CARDS; i<55; i++ ))
+  do
+      cp "$BUILDPATH/$LANGUAGE/images/cards/backs.png" "$BUILDPATH/$LANGUAGE/images/cards/back"$(printf "%02d" $i)".png"
   done
 
 echo "$BACKS"
   magick -quality 100 -density 305 \
-    "$BUILDPATH/$LANGUAGE/images/cards/back"[0-9][0-9].png -rotate 270 \
+    "$BUILDPATH/$LANGUAGE/images/cards/back"[0-9][0-9].png -rotate 90 \
     "$BUILDPATH/$LANGUAGE/print/pdf/cards_back.pdf"
   echo -n .
 done
