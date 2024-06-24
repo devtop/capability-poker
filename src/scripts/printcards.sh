@@ -25,12 +25,22 @@ for LANGUAGE in "de" ; do
 
   FILL=$(( 55 - $CARDS ))
 
-  magick -quality 100 -density 305 \
-    "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png \
-    "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png \
-    "$BUILDPATH/$LANGUAGE/images/cards/s"08.png \
-    "$BUILDPATH/$LANGUAGE/images/cards/s"0[1-$FILL].png -rotate 270 \
-    "$BUILDPATH/$LANGUAGE/print/pdf/cards_front.pdf"
+  if [ -f "$ROOTPATH/ext/ISOcoated_v2_300_eci.icc" ]; then
+    magick -quality 100 -density 305 \
+      "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png \
+      "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png \
+      "$BUILDPATH/$LANGUAGE/images/cards/s"08.png \
+      "$BUILDPATH/$LANGUAGE/images/cards/s"0[1-$FILL].png -rotate 270 \
+      -profile "$ROOTPATH/ext/ISOcoated_v2_300_eci.icc" \
+      "$BUILDPATH/$LANGUAGE/print/pdf/cards_front.pdf"
+  else
+    magick -quality 100 -density 305 \
+      "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png \
+      "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png \
+      "$BUILDPATH/$LANGUAGE/images/cards/s"08.png \
+      "$BUILDPATH/$LANGUAGE/images/cards/s"0[1-$FILL].png -rotate 270 \
+      "$BUILDPATH/$LANGUAGE/print/pdf/cards_front.pdf"
+  fi
   echo -n .
 
   rm "$BUILDPATH/$LANGUAGE/images/cards/back"[0-9][0-9].png
@@ -44,9 +54,16 @@ for LANGUAGE in "de" ; do
       cp "$BUILDPATH/$LANGUAGE/images/cards/backs.png" "$BUILDPATH/$LANGUAGE/images/cards/back"$(printf "%02d" $i)".png"
   done
 
-echo "$BACKS"
-  magick -quality 100 -density 305 \
-    "$BUILDPATH/$LANGUAGE/images/cards/back"[0-9][0-9].png -rotate 90 \
-    "$BUILDPATH/$LANGUAGE/print/pdf/cards_back.pdf"
+  echo "$BACKS"
+  if [ -f "$ROOTPATH/ext/ISOcoated_v2_300_eci.icc" ]; then
+    magick -quality 100 -density 305 \
+      "$BUILDPATH/$LANGUAGE/images/cards/back"[0-9][0-9].png -rotate 90 \
+      -profile "$ROOTPATH/ext/ISOcoated_v2_300_eci.icc" \
+      "$BUILDPATH/$LANGUAGE/print/pdf/cards_back.pdf"
+  else
+    magick -quality 100 -density 305 \
+      "$BUILDPATH/$LANGUAGE/images/cards/back"[0-9][0-9].png -rotate 90 \
+      "$BUILDPATH/$LANGUAGE/print/pdf/cards_back.pdf"
+  fi
   echo -n .
 done
