@@ -6,6 +6,8 @@ on:
     types:
       - file-fully-translated
 
+permissions: write-all
+
 jobs:
   synchronize-with-crowdin:
     runs-on: ubuntu-latest
