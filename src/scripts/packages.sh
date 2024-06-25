@@ -25,6 +25,14 @@ for LANGUAGE in "de" ; do
     "$ROOTPATH/LICENSE"
   echo -n .
 
+  rm "$BUILDPATH/print_professional.$LANGUAGE.zip"
+  zip -j "$BUILDPATH/print_professional.$LANGUAGE.zip" \
+    "$BUILDPATH/$LANGUAGE/print/pdf/cards_front.pdf" \
+    "$BUILDPATH/$LANGUAGE/print/pdf/cards_back.pdf" \
+    "$SRCPATH/box.jpg" \
+    "$ROOTPATH/LICENSE"
+  echo -n .
+
   rm "$BUILDPATH/print_mail.$LANGUAGE.zip"
   zip -j "$BUILDPATH/print_mail.$LANGUAGE.zip" \
     "$BUILDPATH/$LANGUAGE/print/pdf/cards_compact.pdf" \
