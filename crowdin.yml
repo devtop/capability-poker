@@ -1,0 +1,12 @@
+"project_id_env": "CROWDIN_PROJECT_ID"
+"api_token_env": "CROWDIN_PERSONAL_TOKEN"
+"base_path": "."
+"preserve_hierarchy": true
+"base_url": "https://api.crowdin.com"         # https://{organization-name}.crowdin.com for Crowdin Enterprise
+
+"files": [
+  {
+    "source": "/src/cards/[0-9][0-9].de.md",                                       #source files filter
+    "translation": "/src/cards/%original_file_name%.%two_letters_code%.md"        #where translations are stored
+  }
+]
