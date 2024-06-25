@@ -32,6 +32,9 @@ cd "$ROOTPATH"
 # Build print card pdfs
 "$SCRIPT_PATH/printcards.sh"
 
+# Build print box
+"$SCRIPT_PATH/box.sh"
+
 # Build rules
 "$SCRIPT_PATH/rules.sh"
 

@@ -29,7 +29,7 @@ for LANGUAGE in "de" ; do
   zip -j "$BUILDPATH/print_professional.$LANGUAGE.zip" \
     "$BUILDPATH/$LANGUAGE/print/pdf/cards_front.pdf" \
     "$BUILDPATH/$LANGUAGE/print/pdf/cards_back.pdf" \
-    "$SRCPATH/box.jpg" \
+    "$BUILDPATH/$LANGUAGE/print/pdf/box.pdf" \
     "$ROOTPATH/LICENSE"
   echo -n .
 
