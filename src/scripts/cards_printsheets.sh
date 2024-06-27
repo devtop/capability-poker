@@ -66,6 +66,7 @@ for LANGUAGE in "de" ; do
     cp "$BUILDPATH/$LANGUAGE/print/images/cards_backs.jpg" "$BUILDPATH/$LANGUAGE/print/images/cards-$SHEETS""b.jpg"
 
     rm "$BUILDPATH/$LANGUAGE/print/images/cards_back.jpg"
+    rm "$BUILDPATH/$LANGUAGE/print/images/cards_backs.jpg"
   fi
   echo .
 done
