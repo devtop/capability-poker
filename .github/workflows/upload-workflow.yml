@@ -3,6 +3,7 @@ name: Crowdin Upload
 on:
   push:
     paths: [ 'src/cards/**', 'src/rules/**' ]
+    files: [ 'crowdin.yml' ]
     branches: [ main ]
 
 jobs:
