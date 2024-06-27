@@ -2,7 +2,7 @@ name: Crowdin Upload
 
 on:
   push:
-    paths: [ 'src/cards/**' ]
+    paths: [ 'src/cards/**', 'src/rules/**' ]
     branches: [ main ]
 
 jobs:

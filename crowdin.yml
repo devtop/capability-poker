@@ -8,5 +8,9 @@
   {
     "source": "/src/cards/de/[0-9][0-9].de.md",                                       #source files filter
     "translation": "/src/cards/%two_letters_code%/%original_file_name%"        #where translations are stored
+  },
+  {
+    "source": "/src/rules/rules.de.md",                                       #source file filter
+    "translation": "/src/rules/rules.%two_letters_code%.md"                   #where translations are stored
   }
 ]
