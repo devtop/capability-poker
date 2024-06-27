@@ -19,23 +19,23 @@ for LANGUAGE in "de" ; do
   echo "Starting $LANGUAGE cards"
   mkdir -p "$BUILDPATH/$LANGUAGE/images/cards/"
 
-  CATEGORY="$(cat "$SRCPATH/cards/back.$LANGUAGE.md")"
+  CATEGORY="$(cat "$SRCPATH/cards/$LANGUAGE/back.md")"
   CATEGORY="${CATEGORY^^}"
 
   magick "$SRCPATH/cards/back.png" \
   -pointsize 160 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 190,300 '$CATEGORY'" \
   "$BUILDPATH/$LANGUAGE/images/cards/back.png"
 
-  TITLE="$(cat "$SRCPATH/cards/title.$LANGUAGE.md")"
+  TITLE="$(cat "$SRCPATH/cards/$LANGUAGE/title.md")"
   TITLE="${TITLE^^}"
 
   cardcount=0
 
-  for file in src/cards/[0-9][0-9].$LANGUAGE.md; do
+  for file in src/cards/$LANGUAGE/[0-9][0-9].md; do
     filename=$(basename -- "$file")
     extension="${filename##*.}"
-    cardnumber="${filename%\.$LANGUAGE\.md}"
-    TEXT="$(cat "$SRCPATH/cards/$cardnumber.$LANGUAGE.md")"
+    cardnumber="${filename%\.md}"
+    TEXT="$(cat "$SRCPATH/cards/$LANGUAGE/$cardnumber.md")"
     FONTSIZE=36
 
     SIZE=$(magick -size 930x440 -background white -font "ext/static/OpenSans-Regular.ttf" \
@@ -61,7 +61,7 @@ for LANGUAGE in "de" ; do
   rm "$BUILDPATH/$LANGUAGE/"images/cards/i[0-9].png
   echo -n .
 
-  INDIVIDUELL="$(cat "$SRCPATH/cards/individual.$LANGUAGE.md")"
+  INDIVIDUELL="$(cat "$SRCPATH/cards/$LANGUAGE/individual.md")"
   ADDITIONALCARDS=$(($cardcount % 8))
   ADDITIONALCARDS=$((8 - $ADDITIONALCARDS))
 

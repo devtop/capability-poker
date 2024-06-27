@@ -20,7 +20,7 @@ for LANGUAGE in "de" ; do
   mkdir -p "$BUILDPATH/$LANGUAGE/images/cards/"
   echo -n .
 
-  CATEGORY="$(cat "$SRCPATH/cards/back.$LANGUAGE.md")"
+  CATEGORY="$(cat "$SRCPATH/cards/$LANGUAGE/back.md")"
   CATEGORY="${CATEGORY^^}"
 
   magick "$SRCPATH/cards/backs.png" \
@@ -33,10 +33,10 @@ for LANGUAGE in "de" ; do
   rm "$BUILDPATH/$LANGUAGE/"images/cards/s[0-9][0-9].png
   echo -n .
 
-  TITLE="$(cat "$SRCPATH/cards/specialtitle.$LANGUAGE.md")"
+  TITLE="$(cat "$SRCPATH/cards/$LANGUAGE/specialtitle.md")"
   TITLE="${TITLE^^}"
 
-  TEXT="$(cat "$SRCPATH/cards/moreinfo.$LANGUAGE.md")"
+  TEXT="$(cat "$SRCPATH/cards/$LANGUAGE/moreinfo.md")"
 
   magick "$SRCPATH/cards/front.png" \
   -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
@@ -64,10 +64,10 @@ for LANGUAGE in "de" ; do
   echo -n .
 
 
-  TITLE="$(cat "$SRCPATH/cards/credits.$LANGUAGE.md")"
+  TITLE="$(cat "$SRCPATH/cards/$LANGUAGE/credits.md")"
   TITLE="${TITLE^^}"
-  TEXT="$(cat "$SRCPATH/cards/credits_titles.$LANGUAGE.md")"
-  PERSONS="$(cat "$SRCPATH/cards/credits_persons.$LANGUAGE.md")"
+  TEXT="$(cat "$SRCPATH/cards/$LANGUAGE/credits_titles.md")"
+  PERSONS="$(cat "$SRCPATH/cards/$LANGUAGE/credits_persons.md")"
 
   magick "$SRCPATH/cards/front.png" \
   -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
