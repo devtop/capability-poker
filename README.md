@@ -1,6 +1,10 @@
 # Stärkenpoker
 
-Stärkenpoker ist eine kartenbasierte Methode, um Teams ins Gespräch miteinander zu bringen. Die [Regeln](src/rules/rules.de.md) sind einfach zu erlernen. 
+Stärkenpoker ist eine kartenbasierte Methode, um Teams ins Gespräch miteinander zu bringen. 
+
+## Regeln
+
+Es wird eine Karte geogen und an eine Mitspieler\*in verteilt. Die weiteren [Regeln](src/rules/rules.de.md) sind leicht zu erlernen. 
 
 ## Build
 
@@ -10,13 +14,15 @@ Das Repository enthält alle Texte und Scripte, um die Kartenbilder und Drucksei
 
 [Releases](https://github.com/devtop/capability-poker/releases)
 
-### Pre-release [v2406-pre1](https://github.com/devtop/capability-poker/releases/tag/v2406-pre1)
+### Pre-release [v2406-pre2](https://github.com/devtop/capability-poker/releases/tag/v2406-pre2)
 
-[print_diy.de.zip](https://github.com/devtop/capability-poker/releases/download/v2406-pre1/print_diy.de.zip) enthält alle Dateien, die Du fürs ausdrucken und ausschneiden benötigst.
+[print_diy.de.zip](https://github.com/devtop/capability-poker/releases/download/v2406-pre2/print_diy.de.zip) enthält alle Dateien, die Du fürs ausdrucken und ausschneiden benötigst.
 
-[print_mail.de.zip](https://github.com/devtop/capability-poker/releases/download/v2406-pre1/print_mail.de.zip) enthält sind die gleichen Dateien, wie print_diy.de.zip, in reduziertet Qualität und erhöhter Kompression. Diese Datei ist zum Beispiel für den Emailversand geeignet.
+[print_mail.de.zip](https://github.com/devtop/capability-poker/releases/download/v2406-pre2/print_mail.de.zip) enthält sind die gleichen Dateien, wie print_diy.de.zip, in reduziertet Qualität und erhöhter Kompression. Diese Datei ist zum Beispiel für den Emailversand geeignet.
 
-[all.de.zip](https://github.com/devtop/capability-poker/releases/download/v2406-pre1/all.de.zip) enthält alle gebauten Dateien. Sinnvoll, wenn Du die Karten professionell drucken lassen möchtest.
+[print_professional.de.zip](https://github.com/devtop/capability-poker/releases/download/v2406-pre2/print_professional.de.zip) Enthält die Dateien, die wir für den professionellen Druck verwenden.
+
+[all.de.zip](https://github.com/devtop/capability-poker/releases/download/v2406-pre2/all.de.zip) enthält **alle** gebauten Dateien. 
 
 ## Requirements
 
