@@ -4,7 +4,7 @@ Stärkenpoker ist eine kartenbasierte Methode, um Teams ins Gespräch miteinande
 
 ## Regeln
 
-Es wird eine Karte geogen und an eine Mitspieler\*in verteilt. Die weiteren [Regeln](src/rules/rules.de.md) sind leicht zu erlernen. 
+Reihum wird eine Karte gezogen und an eine Mitspieler\*in verteilt. Die weiteren [Regeln](src/rules/rules.de.md) sind leicht zu erlernen. 
 
 ## Build
 
@@ -30,6 +30,7 @@ Das Repository enthält alle Texte und Scripte, um die Kartenbilder und Drucksei
 - ImageMagick
 - OpenSans Font
 - Zip
+- Ghostscript
 - [mdpdf](https://github.com/BlueHatbRit/mdpdf)
 
 ## Credits
