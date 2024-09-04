@@ -21,7 +21,7 @@ for LANGUAGE in "de" ; do
   mkdir -p "$BUILDPATH/$LANGUAGE/print/pdf"
   echo -n .
   
-  CARDS=$(ls "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png "$BUILDPATH/$LANGUAGE/images/cards/s"08.png | wc -l)
+  CARDS=$(ls "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png "$BUILDPATH/$LANGUAGE/images/cards/s"07.png "$BUILDPATH/$LANGUAGE/images/cards/s"08.png | wc -l)
 
   FILL=$(( 55 - $CARDS ))
 
@@ -29,16 +29,18 @@ for LANGUAGE in "de" ; do
     magick -quality 100 -density 305 \
       "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png \
       "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png \
+      "$BUILDPATH/$LANGUAGE/images/cards/s"0[1-$FILL].png \
+      "$BUILDPATH/$LANGUAGE/images/cards/s"07.png \
       "$BUILDPATH/$LANGUAGE/images/cards/s"08.png \
-      "$BUILDPATH/$LANGUAGE/images/cards/s"0[1-$FILL].png -rotate 270 \
       -profile "$ROOTPATH/ext/ISOcoated_v2_300_eci.icc" \
       "$BUILDPATH/$LANGUAGE/print/pdf/cards_front.pdf"
   else
     magick -quality 100 -density 305 \
       "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png \
       "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png \
+      "$BUILDPATH/$LANGUAGE/images/cards/s"0[1-$FILL].png \
+      "$BUILDPATH/$LANGUAGE/images/cards/s"07.png \
       "$BUILDPATH/$LANGUAGE/images/cards/s"08.png \
-      "$BUILDPATH/$LANGUAGE/images/cards/s"0[1-$FILL].png -rotate 270 \
       "$BUILDPATH/$LANGUAGE/print/pdf/cards_front.pdf"
   fi
   echo -n .
@@ -53,16 +55,17 @@ for LANGUAGE in "de" ; do
   do
       cp "$BUILDPATH/$LANGUAGE/images/cards/backs.png" "$BUILDPATH/$LANGUAGE/images/cards/back"$(printf "%02d" $i)".png"
   done
+  cp "$BUILDPATH/$LANGUAGE/images/cards/back_FOKUSTeam.png" "$BUILDPATH/$LANGUAGE/images/cards/back53.png"
 
   echo "$BACKS"
   if [ -f "$ROOTPATH/ext/ISOcoated_v2_300_eci.icc" ]; then
     magick -quality 100 -density 305 \
-      "$BUILDPATH/$LANGUAGE/images/cards/back"[0-9][0-9].png -rotate 90 \
+      "$BUILDPATH/$LANGUAGE/images/cards/back"[0-9][0-9].png \
       -profile "$ROOTPATH/ext/ISOcoated_v2_300_eci.icc" \
       "$BUILDPATH/$LANGUAGE/print/pdf/cards_back.pdf"
   else
     magick -quality 100 -density 305 \
-      "$BUILDPATH/$LANGUAGE/images/cards/back"[0-9][0-9].png -rotate 90 \
+      "$BUILDPATH/$LANGUAGE/images/cards/back"[0-9][0-9].png \
       "$BUILDPATH/$LANGUAGE/print/pdf/cards_back.pdf"
   fi
   echo -n .

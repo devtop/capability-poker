@@ -28,7 +28,10 @@ for LANGUAGE in "de" ; do
   "$BUILDPATH/$LANGUAGE/images/cards/backs.png"
   echo -n .
 
-
+  magick "$SRCPATH/cards/back_FOKUSTeam.png" \
+  -pointsize 160 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 190,300 '$CATEGORY'" \
+  "$BUILDPATH/$LANGUAGE/images/cards/back_FOKUSTeam.png"
+  echo -n .
 
   rm "$BUILDPATH/$LANGUAGE/"images/cards/s[0-9][0-9].png
   echo -n .
@@ -44,10 +47,10 @@ for LANGUAGE in "de" ; do
   -composite -gravity east "$SRCPATH/github_qr.png" -geometry +100+50 \
   -composite "$BUILDPATH/$LANGUAGE/images/cards/s01.png"
   echo -n .
-  
+
   cp "$BUILDPATH/$LANGUAGE/images/cards/s01.png" "$BUILDPATH/$LANGUAGE/images/cards/s02.png"
   echo -n .
-
+  
   cp "$BUILDPATH/$LANGUAGE/images/cards/s01.png" "$BUILDPATH/$LANGUAGE/images/cards/s03.png"
   echo -n .
 
@@ -60,9 +63,19 @@ for LANGUAGE in "de" ; do
   cp "$BUILDPATH/$LANGUAGE/images/cards/s01.png" "$BUILDPATH/$LANGUAGE/images/cards/s06.png"
   echo -n .
 
-  cp "$BUILDPATH/$LANGUAGE/images/cards/s01.png" "$BUILDPATH/$LANGUAGE/images/cards/s07.png"
-  echo -n .
+  TITLE="$(cat "$SRCPATH/cards/$LANGUAGE/podcast_title.md")"
+  TITLE="${TITLE^^}"
+  TEXT="$(cat "$SRCPATH/cards/$LANGUAGE/podcast_info.md")"
+  LINK="$(cat "$SRCPATH/cards/$LANGUAGE/podcast_link.md")"
 
+  magick "$SRCPATH/cards/front_FOKUSTeam.png" \
+  -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
+  -fill black -font "ext/static/OpenSans-Regular.ttf" +pointsize -size 520x380 \
+  caption:"$TEXT" -geometry +120+220 -composite \
+  -size 900x40 \
+  caption:"$LINK" -geometry +120+645 -composite \
+  "$BUILDPATH/$LANGUAGE/images/cards/s07.png"
+  echo -n .
 
   TITLE="$(cat "$SRCPATH/cards/$LANGUAGE/credits.md")"
   TITLE="${TITLE^^}"

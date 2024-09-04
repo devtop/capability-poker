@@ -1,0 +1,1 @@
+Du magst die Regeln lieber hören, als lesen? Kein Problem! Wir empfehlen Dir unsere Folge zu Stärkenpoker im Podcast FOKUS Team. Dort kannst Du Dir die Regeln bequem anhören.
