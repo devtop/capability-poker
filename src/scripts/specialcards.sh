@@ -41,7 +41,7 @@ for LANGUAGE in "de" ; do
 
   TEXT="$(cat "$SRCPATH/cards/$LANGUAGE/moreinfo.md")"
 
-  magick "$SRCPATH/cards/front.png" \
+  magick "$SRCPATH/cards/front_blue.png" \
   -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
   +pointsize -gravity west -font "ext/static/OpenSans-Regular.ttf" -fill black -size 610x440 label:"$TEXT" -geometry +120+55\
   -composite -gravity east "$SRCPATH/github_qr.png" -geometry +100+50 \
@@ -108,7 +108,7 @@ for LANGUAGE in "de" ; do
   TEXT="$(cat "$SRCPATH/cards/$LANGUAGE/credits_titles.md")"
   PERSONS="$(cat "$SRCPATH/cards/$LANGUAGE/credits_persons.md")"
 
-  magick "$SRCPATH/cards/front.png" \
+  magick "$SRCPATH/cards/front_blue.png" \
   -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
   -fill black -pointsize 40 -gravity Northwest -font "ext/static/OpenSans-Regular.ttf" -size 450x \
   caption:"$TEXT" -geometry +600+220 -composite \
