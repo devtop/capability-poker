@@ -48,6 +48,25 @@ for LANGUAGE in "de" ; do
   -composite "$BUILDPATH/$LANGUAGE/images/cards/s01.png"
   echo -n .
 
+
+  TITLE="$(cat "$SRCPATH/cards/$LANGUAGE/rules_title.md")"
+  TITLE="${TITLE^^}"
+
+  TEXT="$(cat "$SRCPATH/cards/$LANGUAGE/rules_front.md")"
+
+  magick "$SRCPATH/cards/front_green.png" \
+  -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
+  +pointsize -gravity northwest -font "ext/static/OpenSans-Regular.ttf" -fill black -size 940x440 label:"$TEXT" -geometry +130+220\
+  -composite "$BUILDPATH/$LANGUAGE/images/cards/rules_front.png"
+  echo -n .
+
+  TEXT="$(cat "$SRCPATH/cards/$LANGUAGE/rules_back.md")"
+  magick "$SRCPATH/cards/front_green.png" \
+  +pointsize -gravity northwest -font "ext/static/OpenSans-Regular.ttf" -fill black -size 940x440 label:"$TEXT" -geometry +130+220\
+  -composite -gravity east "$SRCPATH/qr_github_rules.png" -geometry +200+150 \
+  -composite "$BUILDPATH/$LANGUAGE/images/cards/rules_back.png"
+  echo -n .
+
   cp "$BUILDPATH/$LANGUAGE/images/cards/s01.png" "$BUILDPATH/$LANGUAGE/images/cards/s02.png"
   echo -n .
   

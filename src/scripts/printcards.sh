@@ -21,7 +21,13 @@ for LANGUAGE in "de" ; do
   mkdir -p "$BUILDPATH/$LANGUAGE/print/pdf"
   echo -n .
   
-  CARDS=$(ls "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png "$BUILDPATH/$LANGUAGE/images/cards/limit1.png" "$BUILDPATH/$LANGUAGE/images/cards/limit3.png" "$BUILDPATH/$LANGUAGE/images/cards/s07.png" "$BUILDPATH/$LANGUAGE/images/cards/s08.png" | wc -l)
+  CARDS=$(ls "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png\
+  "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png\
+  "$BUILDPATH/$LANGUAGE/images/cards/limit1.png"\
+  "$BUILDPATH/$LANGUAGE/images/cards/limit3.png"\
+  "$BUILDPATH/$LANGUAGE/images/cards/rules_front.png"\
+  "$BUILDPATH/$LANGUAGE/images/cards/s07.png"\
+  "$BUILDPATH/$LANGUAGE/images/cards/s08.png" | wc -l)
 
   FILL=$(( 55 - $CARDS ))
 
@@ -31,6 +37,7 @@ for LANGUAGE in "de" ; do
       "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png \
       "$BUILDPATH/$LANGUAGE/images/cards/limit1.png" \
       "$BUILDPATH/$LANGUAGE/images/cards/limit3.png" \
+      "$BUILDPATH/$LANGUAGE/images/cards/rules_front.png" \
       "$BUILDPATH/$LANGUAGE/images/cards/s"0[1-$FILL].png \
       "$BUILDPATH/$LANGUAGE/images/cards/s"07.png \
       "$BUILDPATH/$LANGUAGE/images/cards/s"08.png \
@@ -42,6 +49,7 @@ for LANGUAGE in "de" ; do
       "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png \
       "$BUILDPATH/$LANGUAGE/images/cards/limit1.png" \
       "$BUILDPATH/$LANGUAGE/images/cards/limit3.png" \
+      "$BUILDPATH/$LANGUAGE/images/cards/rules_front.png" \
       "$BUILDPATH/$LANGUAGE/images/cards/s"0[1-$FILL].png \
       "$BUILDPATH/$LANGUAGE/images/cards/s"07.png \
       "$BUILDPATH/$LANGUAGE/images/cards/s"08.png \
@@ -62,6 +70,8 @@ for LANGUAGE in "de" ; do
   cp "$BUILDPATH/$LANGUAGE/images/cards/limit4.png" "$BUILDPATH/$LANGUAGE/images/cards/back"$(printf "%02d" $CARDS)".png"
   CARDS=$(( $CARDS + 1 ))
 
+  cp "$BUILDPATH/$LANGUAGE/images/cards/rules_back.png" "$BUILDPATH/$LANGUAGE/images/cards/back"$(printf "%02d" $CARDS)".png"
+  CARDS=$(( $CARDS + 1 ))
 
   for (( i=$CARDS; i<55; i++ ))
   do
