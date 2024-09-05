@@ -57,10 +57,36 @@ for LANGUAGE in "de" ; do
   cp "$BUILDPATH/$LANGUAGE/images/cards/s01.png" "$BUILDPATH/$LANGUAGE/images/cards/s04.png"
   echo -n .
 
-  cp "$BUILDPATH/$LANGUAGE/images/cards/s01.png" "$BUILDPATH/$LANGUAGE/images/cards/s05.png"
+
+  TITLE="$(cat "$SRCPATH/cards/$LANGUAGE/limit_title.md")"
+  TITLE="${TITLE^^}"
+
+  magick "$SRCPATH/cards/limit.png" \
+  -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
+  -fill black -font "ext/static/OpenSans-Bold.ttf" -pointsize 420 \
+  -draw "text 450,600 '1'" \
+  "$BUILDPATH/$LANGUAGE/images/cards/limit1.png"
   echo -n .
 
-  cp "$BUILDPATH/$LANGUAGE/images/cards/s01.png" "$BUILDPATH/$LANGUAGE/images/cards/s06.png"
+  magick "$SRCPATH/cards/limit.png" \
+  -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
+  -fill black -font "ext/static/OpenSans-Bold.ttf" -pointsize 420 \
+  -draw "text 450,600 '2'" \
+  "$BUILDPATH/$LANGUAGE/images/cards/limit2.png"
+  echo -n .
+
+  magick "$SRCPATH/cards/limit.png" \
+  -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
+  -fill black -font "ext/static/OpenSans-Bold.ttf" -pointsize 420 \
+  -draw "text 450,600 '3'" \
+  "$BUILDPATH/$LANGUAGE/images/cards/limit3.png"
+  echo -n .
+
+  magick "$SRCPATH/cards/limit.png" \
+  -pointsize 50 -fill white -font "ext/static/OpenSans-SemiBold.ttf" -draw "text 130,180 '$TITLE'" \
+  -fill black -font "ext/static/OpenSans-Bold.ttf" -pointsize 420 \
+  -draw "text 450,600 '4'" \
+  "$BUILDPATH/$LANGUAGE/images/cards/limit4.png"
   echo -n .
 
   TITLE="$(cat "$SRCPATH/cards/$LANGUAGE/podcast_title.md")"
