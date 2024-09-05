@@ -4,7 +4,7 @@ ob sie die Karte behält oder ablegt. Nun ist die nächste Person
 an der Reihe. Wird das vereinbarte Limit überstiegen, muss eine 
 Karte abgelegt oder weitergegeben werden.
 Das Spiel endet nach einer vereinbarten Zeit, einer festgelegten 
-Anzahl von Karten oder solange Ihr Lust habt.
+Anzahl von Karten ... oder Ihr spielt, solange Ihr Lust habt.
 
 für 1-12 Personen (am besten 3-6)
 
