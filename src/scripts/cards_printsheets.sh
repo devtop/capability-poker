@@ -27,7 +27,14 @@ for LANGUAGE in "de" ; do
   magick montage -page A4 -density 300 -gravity north-west \
    "$BUILDPATH/$LANGUAGE/images/cards/"[0-9][0-9].png \
    "$BUILDPATH/$LANGUAGE/images/cards/i"[0-9].png \
-   "$BUILDPATH/$LANGUAGE/images/cards/s"[0-9][0-9].png \
+   "$BUILDPATH/$LANGUAGE/images/cards/rules_front.png" \
+   "$BUILDPATH/$LANGUAGE/images/cards/s07.png" \
+   "$BUILDPATH/$LANGUAGE/images/cards/limit1.png" \
+   "$BUILDPATH/$LANGUAGE/images/cards/limit3.png" \
+   "$BUILDPATH/$LANGUAGE/images/cards/s01.png" \
+   "$BUILDPATH/$LANGUAGE/images/cards/s01.png" \
+   "$BUILDPATH/$LANGUAGE/images/cards/s01.png" \
+   "$BUILDPATH/$LANGUAGE/images/cards/s08.png" \
   -tile 2x4 -geometry +2+2 "$BUILDPATH/$LANGUAGE/print/images/cards.jpg"
   echo -n . 
   
@@ -44,10 +51,10 @@ for LANGUAGE in "de" ; do
   echo -n .
   
   magick montage -page A4 -density 300 -gravity north-west \
-  "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
-  "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
-  "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
-  "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
+  "$BUILDPATH/$LANGUAGE/images/cards/back_FOKUSTeam.png" \
+  "$BUILDPATH/$LANGUAGE/images/cards/rules_back.png" \
+  "$BUILDPATH/$LANGUAGE/images/cards/limit4.png" \
+  "$BUILDPATH/$LANGUAGE/images/cards/limit2.png" \
   "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
   "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
   "$BUILDPATH/$LANGUAGE/images/cards/backs.png" \
